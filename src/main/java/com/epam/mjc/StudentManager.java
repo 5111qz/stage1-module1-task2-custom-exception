@@ -5,13 +5,13 @@ public class StudentManager {
 
   private static final long[] IDs = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
 
-  public Student find(long studentID) throws CustomException {
-    if (IDs.contains(studentID)) {
-    return Student.getValueOf(studentID);
-    }
-    else {
+    public Student find(long studentID) throws CustomException {
+
+    if (Student.getValueOf(studentID) != null) {
+      return Student.getValueOf(studentID);
+    } else {
       throw new CustomException(studentID);
-  }
+    }
   }
 
   public static void main(String[] args) {
